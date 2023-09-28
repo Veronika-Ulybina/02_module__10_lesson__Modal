@@ -88,6 +88,7 @@
 
 .form-body__input_indicator_color::-webkit-calendar-picker-indicator {
 	color: #6e6893;
+	transition: .3s;
 }
 
 .form-body__checkbox {
