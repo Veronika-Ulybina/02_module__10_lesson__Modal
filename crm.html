@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="preload" href="fonts/inter-semibold.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/inter-bold.woff2" as="font" type="font/woff2" crossorigin>
+
+	<link rel="stylesheet" href="css/style.css">
+	<title>Modal</title>
+</head>
+
+<body>
+	<div class="fullscreen">
+		<div class="modal">
+
+			<button class="modal__btn-close" type="button">
+				<svg class="modal__cross" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M2 2L22 22" stroke="#6E6893" stroke-width="3" stroke-linecap="round"/>
+					<path d="M2 22L22 2" stroke="#6E6893" stroke-width="3" stroke-linecap="round"/>
+				</svg>
+			</button>
+	
+			<form class="form">
+				<h1 class="form__title">Добавить товар</h1>
+	
+				<fieldset class="form__body form-body">
+
+					<div class="form-body__item">
+						<label class="form-body__label" for="name">Наименование</label>
+						<input class="form-body__input" type="text" name="name" id="name" 
+										pattern="^[А-Яа-яЁё\s]+$" 
+										title="Введите наименование на русском языке" 
+										tabindex="1" 
+										required>
+					</div>
+	
+					<div class="form-body__item">
+						<label class="form-body__label" for="category">Категория</label>
+						<input class="form-body__input form-body__input_indicator_color" type="text" name="category" id="category" 
+										list="category-list" 
+										pattern="^[А-Яа-яЁё\s]+$" 
+										tabindex="2">
+	
+						<datalist id="category-list"> 
+							<option>верхняя одежда</option>
+							<option>демисезонные комбинезоны</option>
+							<option>обувь</option>
+						</datalist>
+					</div>
+	
+					<div class="form-body__item">
+						<label class="form-body__label" for="units">Единицы измерения</label>
+						<input class="form-body__input" type="text" name="units" id="units" 
+										minlength="0" 
+										maxlength="2" 
+										pattern="^[А-Яа-яЁё\s]+$" 
+										title="шт" 
+										tabindex="3">
+					</div>
+	
+					<div class="form-body__item">
+						<label class="form-body__label" for="discount">Дисконт</label>
+						<input class="form-body__checkbox" type="checkbox" name="discount" value="true" id="discount" 
+										tabindex="4" 
+										required>
+	
+						<input class="form-body__input form-body__input_grey" type="text" name="percent" id="percent" 
+										tabindex="5">
+						<label class="visually-hidden" for="percent"></label>
+					</div>
+	
+					<div class="form-body__item">
+						<label class="form-body__label" for="description">Описание</label>
+						<textarea class="form-body__input form-body__input_textarea" name="description" id="description" 
+											maxlength="30" 
+											pattern="^[А-Яа-яЁё\s]+$" 
+											title="Не более 30 символов" 
+											tabindex="6">
+						</textarea>
+					</div>
+	
+					<div class="form-body__item">
+						<label class="form-body__label" for="amount">Количество</label>
+						<input class="form-body__input" type="text" name="amount" id="amount" 
+										inputmode="numeric" 
+										pattern="[0-9]{1,2}" 
+										min="0" 
+										tabindex="7" 
+										required>
+					</div>
+	
+					<div class="form-body__item">
+						<label class="form-body__label" for="price">Цена</label>
+						<input class="form-body__input" type="text" name="price" id="price" 
+										inputmode="numeric" 
+										min="0" 
+										pattern="\d+(\.\d{2})?" 
+										title="0.00 р" 
+										tabindex="8">
+					</div>
+
+				</fieldset>
+	
+				<button class="form__btn" type="submit" 
+								formaction="#" 
+								formmethod="post" 
+								tabindex="9">Добавить товар
+				</button>
+			</form>
+
+		</div>
+	</div>
+</body>
+
+</html>
